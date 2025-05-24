@@ -335,24 +335,21 @@ async function deleteProduct(id) {
 
     const confirmBtn = document.createElement("button");
     confirmBtn.textContent = "Sim";
-    confirmBtn.style.marginRight = "10px";
-    confirmBtn.style.padding = "5px 10px";
+    confirmBtn.style.margin = "10px auto 0"; // Centraliza o botão
+    confirmBtn.style.padding = "5px 20px";
     confirmBtn.style.background = "var(--danger)";
     confirmBtn.style.color = "white";
     confirmBtn.style.border = "none";
     confirmBtn.style.borderRadius = "4px";
+    confirmBtn.style.display = "block"; // Garante que o margin auto funcione
     confirmBtn.onclick = () => {
-      customAlert
-        .querySelector(".alert-message")
-        .appendChild(document.createElement("div"))
-        .remove();
+      customAlert.querySelector(".alert-message > div")?.remove();
       resolve(true);
     };
 
     const btnContainer = document.createElement("div");
     btnContainer.style.marginTop = "10px";
-    btnContainer.style.display = "flex";
-    btnContainer.style.justifyContent = "flex-end";
+    btnContainer.style.width = "100%"; // Ocupa toda a largura
     btnContainer.appendChild(confirmBtn);
 
     customAlert.querySelector(".alert-message").appendChild(btnContainer);
