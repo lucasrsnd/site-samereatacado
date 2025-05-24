@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Samere Atacado - Catálogo Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="img/icone.png">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Samere Atacado">
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1 class="floating">Catálogo Digital</h1>
+        <p>Explore nossa coleção premium de malhas e encontre os melhores produtos para o seu negócio</p>
+
+        <div class="video-container">
+            <video controls poster="https://via.placeholder.com/800x450?text=Tutorial+de+Pedidos">
+                <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <h2>Por que comprar conosco?</h2>
+
+        <div class="benefits-container">
+            <div class="benefits-slider" id="benefitsSlider">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="benefit-title">Pagamento Seguro</h3>
+                    <p class="benefit-description">Processamos seus pagamentos com criptografia avançada para garantir
+                        total segurança.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="benefit-title">Entrega Rápida</h3>
+                    <p class="benefit-description">Entregamos em todo o país com prazos reduzidos e rastreamento em
+                        tempo real.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="benefit-title">Qualidade Premium</h3>
+                    <p class="benefit-description">Trabalhamos com matérias-primas da mais alta qualidade.</p>
+                </div>
+            </div>
+
+            <div class="slider-nav">
+                <button class="slider-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <div class="slider-dots" id="sliderDots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="filters">
+            <label for="fabricFilter">Filtrar por malha:</label>
+            <select id="fabricFilter">
+                <option value="">Todas</option>
+                <option value="100% algodão">100% algodão</option>
+                <option value="Cotton Pima">Cotton Pima</option>
+            </select>
+
+            <label for="brandSearch">Pesquisar produtos:</label>
+            <input type="text" id="brandSearch" placeholder="Digite o nome da marca" />
+        </div>
+
+        <section>
+            <h2>100% Algodão</h2>
+            <div id="algodaoSection" class="products-grid"></div>
+        </section>
+
+        <section>
+            <h2>Cotton Pima</h2>
+            <div id="pimaSection" class="products-grid"></div>
+        </section>
+    </section>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+
+            <h2 id="modalBrand"></h2>
+            <p id="modalFabric"></p>
+            <p id="modalCategory"></p>
+
+            <div class="modal-images">
+                <div class="main-image-container">
+                    <img id="modalMainImage" src="" alt="Imagem principal" />
+                </div>
+                <div id="modalThumbnails" class="thumbnail-container"></div>
+            </div>
+
+            <div class="modal-options">
+                <div>
+                    <strong>Cores:</strong>
+                    <div id="modalColorsContainer"></div>
+                </div>
+                <div>
+                    <strong>Tamanhos:</strong>
+                    <div id="modalSizesContainer"></div>
+                </div>
+            </div>
+
+            <button id="modalAddToCart" class="btn-add">Adicionar ao carrinho</button>
+        </div>
+    </div>
+
+    <div class="cart-icon" id="cartIcon">
+        <i class="fas fa-shopping-bag" style="color: white;"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <div id="cartModal">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-content" id="cartContent">
+        </div>
+        <div class="cart-footer">
+            <div id="minOrderMessage" class="min-order-message"></div>
+            <div class="cart-total">
+                Itens no carrinho: <span id="cartTotalItems">0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" disabled>Finalizar Pedido via WhatsApp</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Samere Atacado. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

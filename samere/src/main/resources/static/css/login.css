@@ -1,0 +1,193 @@
+:root {
+  --primary: #2ea4cb;
+  --secondary: #9ee7ff;
+  --dark: #121212;
+  --darker: #0a0a0a;
+  --light: #ffffff;
+  --gray: #2a2a2a;
+  --accent: #9ee7ff;
+  --border-radius: 4px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --transition: all 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at center, #0a0e12 0%, #000000 100%),
+      radial-gradient(
+        circle at 20% 30%,
+        rgba(46, 164, 203, 0.15) 0%,
+        transparent 25%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        rgba(158, 231, 255, 0.1) 0%,
+        transparent 30%
+      ),
+      repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.01) 0px,
+        rgba(255, 255, 255, 0.01) 1px,
+        transparent 1px,
+        transparent 10px
+      );
+  background-blend-mode: overlay;
+  animation: breathLight 12s infinite alternate;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  color: var(--light);
+}
+
+@keyframes breathLight {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.login-container {
+  background-color: rgba(18, 18, 18, 0.85);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid rgba(42, 42, 42, 0.5);
+  backdrop-filter: blur(8px);
+  transition: var(--transition);
+}
+
+.login-container:hover {
+  border-color: rgba(46, 164, 203, 0.3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+  color: var(--light);
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  color: var(--secondary);
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+input {
+  padding: 12px 15px;
+  border: 1px solid var(--gray);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  transition: var(--transition);
+  outline: none;
+  background-color: rgba(26, 26, 26, 0.7);
+  color: var(--light);
+}
+
+input:focus {
+  border-color: var(--primary);
+  background-color: rgba(37, 37, 37, 0.8);
+  box-shadow: 0 0 0 2px rgba(46, 164, 203, 0.2);
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(158, 231, 255, 0.2),
+    transparent
+  );
+  margin: 15px 0;
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--dark);
+  border: none;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: -10px;
+}
+
+.forgot-password a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: 12px;
+  transition: var(--transition);
+}
+
+.forgot-password a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.note {
+  font-size: 12px;
+  color: rgba(158, 231, 255, 0.6);
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  max-width: 150px;
+}

@@ -1,1 +1,1 @@
-# site-samereatacado
+# samereatacado

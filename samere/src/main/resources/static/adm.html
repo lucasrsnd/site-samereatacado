@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Samere Atacado - Painel Administrativo</title>
+  <link rel="stylesheet" href="css/adm.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="imagex/png" href="img/icone.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <img src="https://cdn-icons-png.flaticon.com/512/214/214305.png" class="floating-tshirt" alt="Camiseta decorativa">
+  <img src="https://cdn-icons-png.flaticon.com/512/892/892458.png" class="floating-tshirt" alt="Camiseta decorativa">
+  <img src="https://cdn-icons-png.flaticon.com/512/214/214305.png" class="floating-tshirt" alt="Camiseta decorativa">
+
+  <h1>Painel Administrativo - Samere Atacado</h1>
+
+  <section>
+    <h2>Cadastrar Nova Camisa</h2>
+    <form id="addProductForm">
+      <label for="productBrand">Marca</label>
+      <input type="text" id="productBrand" placeholder="Digite a marca" required />
+
+      <label for="productFabric">Tipo de Malha</label>
+      <select id="productFabric" required>
+        <option value="">Selecione...</option>
+        <option value="100% Algodão">100% Algodão</option>
+        <option value="Cotton Pima">Cotton Pima</option>
+      </select>
+
+      <label for="colorInput">Adicionar Cor</label>
+      <input type="text" id="colorInput" placeholder="Digite uma cor" />
+      <button type="button" id="addColorBtn">Adicionar Cor</button>
+      <div class="tags-container" id="colorsContainer"></div>
+
+      <label for="sizeInput">Adicionar Tamanho</label>
+      <input type="text" id="sizeInput" placeholder="Digite um tamanho" />
+      <button type="button" id="addSizeBtn">Adicionar Tamanho</button>
+      <div class="tags-container" id="sizesContainer"></div>
+
+      <div class="image-upload-container">
+        <label for="productImages">Imagens da Camisa (Máx. 3)</label>
+        <input type="file" id="productImages" accept="image/*" multiple required />
+        <div id="imagePreviews" class="image-previews"></div>
+      </div>
+
+      <label><input type="checkbox" id="outOfStock" /> Sem estoque</label>
+
+      <button type="submit">Cadastrar Camisa</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Camisas Cadastradas</h2>
+    <input type="text" id="searchProduct" placeholder="Buscar camisa..." />
+    <div class="products-grid-container">
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <div id="editModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeEditModal">X</button>
+      <h2>Editar Camisa</h2>
+      <form id="editProductForm">
+        <input type="hidden" id="editProductId" />
+
+        <label for="editProductBrand">Marca</label>
+        <input type="text" id="editProductBrand" placeholder="Digite a marca" required />
+
+
+        <label for="editProductFabric">Tipo de Malha</label>
+        <select id="editProductFabric" required>
+          <option value="">Selecione...</option>
+          <option value="100% Algodão">100% Algodão</option>
+          <option value="Cotton Pima">Cotton Pima</option>
+        </select>
+
+        <label for="editColorInput">Adicionar Cor</label>
+        <input type="text" id="editColorInput" placeholder="Digite uma cor" />
+        <button type="button" id="editAddColorBtn">Adicionar Cor</button>
+        <div class="tags-container" id="editColorsContainer"></div>
+
+        <label for="editSizeInput">Adicionar Tamanho</label>
+        <input type="text" id="editSizeInput" placeholder="Digite um tamanho" />
+        <button type="button" id="editAddSizeBtn">Adicionar Tamanho</button>
+        <div class="tags-container" id="editSizesContainer"></div>
+
+        <label for="editProductImages">Novas Imagens (opcional, máx. 3)</label>
+        <input type="file" id="editProductImages" accept="image/*" multiple />
+        <div id="editImagePreviews" class="image-previews"></div>
+
+        <label><input type="checkbox" id="editOutOfStock" /> Sem estoque</label>
+
+        <button type="submit">Salvar Alterações</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="customAlert" class="custom-alert">
+    <div class="alert-content">
+      <span class="alert-message"></span>
+      <button class="alert-close-btn">&times;</button>
+    </div>
+  </div>
+
+  <form action="/logout" method="post" id="logoutForm">
+
+    <button type="submit" id="logoutBtn" class="btn-sair" title="Sair">
+      <i class="fa-solid fa-right-from-bracket"></i>
+    </button>
+  </form>
+
+  <a href="index.html" id="homeBtn" class="btn-sair" title="Início">
+    <i class="fa-solid fa-store"></i>
+  </a>
+
+  <script src="js/adm.js"></script>
+
+</body>
+
+</html>
