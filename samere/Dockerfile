@@ -1,6 +1,6 @@
 FROM eclipse-temurin:21-jre
 
-COPY target/samere-0.0.1-SNAPSHOT.jar app.jar
+COPY samere/target/samere-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
